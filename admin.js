@@ -55,11 +55,42 @@ function subcat(){
   sub_cat1.child("Image").set(document.getElementById("fileButton").value);
   sub_cat1.child("Keywords").set(document.getElementById("kwrd").value);
 }
+
+// Login authentication
+firebase.auth().onAuthStateChanged(function(user){
+  if (user) {
+    // user is signed in
+    document.getElementById("user_div").style.display="block";
+    document.getElementById("user_div").style.display="none";
+
+    var user = firebase.auth().currentUser;
+
+    if (user != null) {
+      var email_id = user.email;
+      var email_verified = user.emailVerified;
+
+      if (email_verified) {
+        document.getElementById("verify_btn").style.display = "none";
+      } else {
+        document.getElementById("verify_btn").style.display = "block";
+      }
+      document.getElementById("user_para").innerHTML = "Welcome :" + email_id + "<br/> Verified:" + email_verified;
+  
+    } else {
+      document.getElementById("user_div").style.display = "none";
+      document.getElementById("login_div").style.display = "block";
+    }
+  }
+});
+
+function termsConditions(){
+  var text1 = firebase.database().ref("Terms and Conditions").child("Terms and conditions").set(document.getElementById("terms").value);
+}
+
 function login(){
-  var userEmail1 = firebase.database().ref("admin").child(document.getElementById("email_field").value);
-  userEmail1.child("Email").set(document.getElementById("email_field").value);
-  var userPass = firebase.database().ref("admin").child(document.getElementById("password_field").value);
-  userPass1.child("Password").set(document.getElementById("password_field").value);
+  var userEmail1 = document.getElementById("email_field").value;
+  var userPass = document.getElementById("password_field").value;
+
   firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
@@ -68,18 +99,33 @@ function login(){
     // ...
   });
 }
-function termsConditions(){
-  var text1 = firebase.database().ref("Terms and Conditions").child("Terms and conditions").set(document.getElementById("terms").value);
-}
-function btnSignUp(){
-  var adminSignUp1 = firebase.database().ref("admin account").child(document.getElementById("email_field").value);
-  adminSignUp1.child("Email").set(document.getElementById("email_field").value);
-  adminSignUp1.child("Password").set(document.getElementById("password_field").value);
-  /*firebase.auth().crateUserWithEmailAndPassword(userEmail,userPass).catch(function(error){
-    var errorCode = error.code;
-    var errorMessage = error.message;
+
+function create_account(){
+  var userEmail1 = document.getElementById("email_field").value;
+  var userPass = document.getElementById("password_field").value;
+
+  firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
     window.alert("Error:"+errorMessage);
-  })*/
+    // ...
+  });
+}
+
+function logout(){
+  firebase.auth().signOut();
+}
+
+function send_verification(){
+  var user = firebase.auth().currentUser;
+  user.sendEmailVerification().then(function() {
+    // Email sent.
+    window.alert("Verification Sent");
+  }).catch(function(error) {
+    // An error happened.
+    window.alert("Error:" + error.message);
+  });
 }
 
 

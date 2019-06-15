@@ -16,33 +16,17 @@
       <div class="header_wrapper" style="background-color: #6495ED;height: 150px">
         <h1 style="text-align: center;font-family: times new roman;font-size: 75px">Admin Login Here!</h1>
       </div>
-      <div class="content_wrapper" style="height: 200px">
-        <form class="col-8 offset-4 mt-5">
-          <div class="form-group row">
-            <label for="exampleInputEmail1" class="col-2">Email address</label>
-            <div class="col-5">
+      <div id="login_div" class="main_div">
               <input type="email" class="form-control" id="email_field" placeholder="Enter email">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="exampleInputPassword1" class="col-2">Password</label>
-            <div class="col-5">
               <input type="password" class="form-control" id="password_field" placeholder="Password">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-2"></label>
-            <div class="col-5">
-              <button type="submit" class="btn btn-primary" onclick="login()">Login</button>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-2"></label>
-            <div class="col-5">
-              <p>If you're not admin <a href="signUp.html">Sign Up</a> here!</p>
-            </div>
-          </div>
-        </form>
+              <button onclick="login()">Login</button>
+              <button onclick="create_accout()">Create a new account</button>
+      </div>
+      <div id="user_div" class="loggedin-div">
+      <h3>Welcome User</h3>
+      <p id="user_para">Welcome to admin panel. You're currently logged in.</p>
+      <button onclick="logout()">Logout</button>
+      <button id="verify_btn" onclick="send_verification()">Send Verification</button>       
       </div>
     </div>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
