@@ -8,7 +8,7 @@
 	<?php include 'header.php';?>
     <div class="container_wrapper" style="width: 100%;height: 515px">
     <?php include 'sidebar.php'; ?>
-        <div class="content" style="width:70%;float:right;height:515px;background-color: blue">
+        <div class="content" style="width:70%;float:right;height:515px;background-color: #BFF908">
             <form class="col-10 offset-0 mt-5">
 	            <div class="form-group row">
 		            <label for="enterFoodName" class="col-2">Name of  Sub-Category</label>
@@ -21,10 +21,13 @@
 	            <div class="form-group row">
 		            <label for="enterFoodName" class="col-2">Name of Category</label>
 		            <div class="col-10">
-		            	<input type="text" class="form-control form-control-sm" id="cat_name" placeholder="Enter category">
-		                <script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
-		                <script type="text/javascript" src="admin.js"></script>
-		            </div>
+				    	<select class="form-control form-control-sm" id="category">
+				    		<option value="food">Food</option>
+				    		<option value="dessert">Dessert</option>
+				    		<option value="bar">Bar</option>
+				    		<option value="drink">Drink</option>
+				    	</select>
+				  	</div>
 	            </div> 
 	            <div class="form-group row">
 		            <label for="description" class="col-2">Description</label>

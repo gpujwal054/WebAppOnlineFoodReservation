@@ -8,10 +8,10 @@
 	<?php include 'header.php';?>
 	<div class="container_wrapper" style="width: 100%;height: 515px">
 	<?php include 'sidebar.php' ?>
-	    <div class="content" style="width:70%;float:right;height:515px;background-color: blue">
+	    <div class="content" style="width:70%;float:right;height:515px;background-color: #BFF908">
 	      	<form class="col-10 offset-0 mt-5">
 			  	<div class="form-group row">
-				    <label for="enterFoodName" class="col-2">Food or Drinks</label>
+				    <label for="enterFoodName" class="col-2">Name of product</label>
 				    <div class="col-10">
 				    	<input type="text" class="form-control form-control-sm" id="food_name" placeholder="Enter food name">
 				    	<script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
@@ -21,13 +21,13 @@
 			  	<div class="form-group row">
 			    	<label for="enterFoodCategory" class="col-2">Category</label>
 			    	<script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
-				    	<script type="text/javascript" src="admin.js"></script>
+				    <script type="text/javascript" src="admin.js"></script>
 				    <div class="col-10">
 				    	<select class="form-control form-control-sm" id="category">
 				    		<option value="food">Food</option>
 				    		<option value="dessert">Dessert</option>
 				    		<option value="bar">Bar</option>
-				    		<option value="soft_drink">Soft Drink</option>
+				    		<option value="drink">Drink</option>
 				    	</select>
 				  	</div>
 			  	</div>
@@ -37,10 +37,18 @@
 				    	<script type="text/javascript" src="admin.js"></script>
 				    <div class="col-10">
 				    	<select class="form-control form-control-sm" id="sub_category">
-				    		<option value="food">Food</option>
-				    		<option value="dessert">Dessert</option>
-				    		<option value="bar">Bar</option>
-				    		<option value="soft_drink">Soft Drink</option>
+				    		<option value="none">None</option>
+				    		<option value="veg">Veg</option>
+				    		<option value="buff">Buff</option>
+				    		<option value="chicken">Chicken</option>
+				    		<option value="beaf">Beaf</option>
+				    		<option value="chicken_mushroom">Chicken Mushroom</option>
+				    		<option value="cheese_tomato_pizza">Cheese Tomato Pizza</option>
+				    		<option value="chicken_tomato_pizza">Chicken Tomato Pizza</option>
+				    		<option value="mushroom_pizza">Mush Room Pizza</option>
+				    		<option value="milk_tea">Milk Tea</option>
+				    		<option value="black_tea">Black Tea</option>
+				    		<option value="flavoured Tea">Flavoured Tea</option>
 				    	</select>
 				  	</div>
 			  	</div>	
@@ -66,7 +74,7 @@
 				    	<progress value="0" max="100" id="uploader">0%</progress>
 				    	<input type="file" class="form-control form-control-sm" id="fileButton" placeholder="Description">
 				    	<script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
-				    	<script type="text/javascript" src="file.js"></script>
+				    	<script type="text/javascript" src="admin.js"></script>
 			    	</div>
 			  	</div>
 			  	<div class="form-group row">

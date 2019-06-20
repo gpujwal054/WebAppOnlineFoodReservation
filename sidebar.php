@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-	<div class="sidebar" style="width: 30%;background-color: #FF7F50;float: left;height: 515px">
+	<div class="sidebar" style="width: 30%;background-color: #6B2B23;float: left;height: 515px">
 		<ul style="padding: 0;margin-top: 5px">
 			<div class="col-10">
 				<li style="display: block"><a href="insert_product.php" style="font-family: times new roman;font-size: 24px;color: darkgreen">Insert Product</a></li>
 			</div>
-			<div class="col-10">
+			<!--<div class="col-10">
 				<li style="display: block;"><a href="insert_category.php" style="font-family: times new roman;font-size: 24px;color: darkgreen">Insert Category</a></li>
 			</div>
 			<div class="col-10">
 				<li style="display: block;"><a href="insert_subCat.php" style="font-family: times new roman;font-size: 24px;color: darkgreen">Insert Sub-Category</a></li>
-			</div>
+			</div>-->
 			<div class="col-10">
 				<li style="display: block;"><a href="insert_table.php" style="font-family: times new roman;font-size: 24px;color: darkgreen">Insert Table</a></li>
 			</div>

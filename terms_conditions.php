@@ -12,7 +12,7 @@
 	<?php include 'header.php';?>
 	<div class="container_wrapper" style="width: 100%;height: 515px">	
 	<?php include 'sidebar.php'; ?>	
-		<div class="content" style="width:70%;float:right;height:515px;background-color: blue">
+		<div class="content" style="width:70%;float:right;height:515px;background-color: #BFF908">
 			<h1>Terms and conditions</h1>
 				<textarea rows="5" cols="50" style="text-align:center;" id="terms"></textarea>
 				<button onclick="termsConditions()">Click here to write file</button>
