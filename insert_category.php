@@ -9,49 +9,43 @@
 	<div class="container_wrapper" style="width: 100%;height: 515px">
 	<?php include 'sidebar.php'; ?>
     <div class="content" style="width:70%;float:right;height:515px;background-color: #BFF908">
-      	<form class="col-10 offset-0 mt-5">
+      	<form class="col-12 offset-0 mt-5">
 		  	<div class="form-group row">
-			    <label for="enterFoodName" class="col-2">Name of Category</label>
-			    <div class="col-10">
-			    	<input type="text" class="form-control form-control-sm" id="cat_name" placeholder="Enter category">
-			    	<script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
-			    	<script type="text/javascript" src="admin.js"></script>
+			    <label for="enterFoodName" class="col-3">Name of Category</label>
+			    <div class="col-8" style="padding-left: 0px">
+			    	<input type="text" class="form-control form-control-sm"  id="cat_name" placeholder="Enter category">
 				</div>
 		  	</div>	
 		  	<div class="form-group row">
-			    <label for="description" class="col-2">Description</label>
-			    <div class="col-10">
+			    <label for="description" class="col-3">Description</label>
+			    <div class="col-8" style="padding-left: 0px">
 			    	<input type="text" class="form-control form-control-sm" id="desc" placeholder="Description">
-			    	<script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
-			    	<script type="text/javascript" src="admin.js"></script>
 		    	</div>
 		  	</div>
 		  	<div class="form-group row">
-			    <label for="imageFile" class="col-2">Image</label>
-			    <div class="col-10">
+			    <label for="imageFile" class="col-3">Image</label>
+			    <div class="col-8" style="padding-left: 0px">
 			    	<progress value="0" max="100" id="uploader">0%</progress>
 			    	<input type="file" class="form-control form-control-sm" id="fileButton" placeholder="Description">
-			    	<script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
-			    	<script type="text/javascript" src="file.js"></script>
 		    	</div>
 		  	</div>
 		  	<div class="form-group row">
-			    <label for="keywordField" class="col-2">Keywords</label>
-			    <div class="col-10">
+			    <label for="keywordField" class="col-3">Keywords</label>
+			    <div class="col-8" style="padding-left: 0px">
 			    	<input type="text" class="form-control form-control-sm" id="kwrd" placeholder="Keyword">
-			    	<script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
-			    	<script type="text/javascript" src="admin.js"></script>
 		    	</div>
 		  	</div>
 	  		<div class="form-group row">
-	  			<label class="col-2"></label>
+	  			<label class="col-3"></label>
 	  			<div class="col-8">
-		  			<button type="submit" class="btn btn-primary" onclick="cats()" >Submit</button>
+		  			<button type="button" class="btn btn-primary" onclick="cats()" >Submit</button>
 		  		</div>
 			</div>
 		</form>
 	</div>
 	</div>  
 	<?php include 'footer.php';?> 
+	<script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+	<script type="text/javascript" src="admin.js"></script>
 </body>
 </html>
