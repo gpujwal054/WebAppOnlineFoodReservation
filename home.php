@@ -13,7 +13,10 @@
 		<div class="container_wrapper" style="width: 100%;height: 515px">
 		<?php include 'sidebar.php'; ?>
 			<div class="content" style="width:70%;float:right;height:515px;background-color: #BFF908">
-				<p>assss</p>
+				<img src="images/home_admin.jpg" style="height: 50%;width: 50%;float: left;padding: 1px">
+				<img src="images/mix_food_items.jpg" style="height: 50%;width: 50%;float: right;padding: 1px"><br>
+				<img src="images/drinks_items.jpg" style="height: 50%;width: 50%;float: left;padding: 1px">
+				<img src="images/dessert_items.jpg" style="height: 50%;width: 50%;float: right;padding: 1px">
 			</div>
 		</div>
 		<?php include 'footer.php';?>
