@@ -7,32 +7,24 @@
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-	<script type="text/javascript" src="admin.js"></script>
 	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 	<title>Admin Panel</title>
 </head>
 <body>
-<form>
-	<div class="form-group">
-	<label for="exampleInputEmail1">Email address</label>
-	<input type="email" name="email" class="form-control" id="userEmail" placeholder="Enter your email address">
+	<div>
+		<form action="home.php">
+			<input type="email" name="email" class="form-control" id="userEmail" placeholder="Enter your email address" required="" />
+			<input type="password" name="password" class="form-control" id="userPassword" placeholder="Enter your password" required="" />
+			<button class="btn btn-primary" onclick="login()">Sign In</button>
+		</form>
 	</div>
-	<div class="form-group">
-	<label for="exampleInputPassword1">Password</label>
-	<input type="password" name="password" class="form-control" id="userPassword" placeholder="Enter your password">
-	</div>
-	<button type="submit" class="btn btn-primary">Sign In</button><br>
 	<h4><a href="signUp.php">Sign Up your account</a></h4>
-</form>
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
 	 https://firebase.google.com/docs/web/setup#config-web-app -->
-
-
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -41,5 +33,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+<script type="text/javascript" src="admin.js"></script>
 </body>
 </html>
