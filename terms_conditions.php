@@ -13,9 +13,9 @@
 	<div class="container_wrapper" style="width: 100%;height: 515px">	
 	<?php include 'sidebar.php'; ?>	
 		<div class="content" style="width:70%;float:right;height:515px;background-color: #BFF908">
-			<h1>Terms and conditions</h1>
-				<textarea rows="5" cols="50" style="text-align:center;" id="terms"></textarea>
-				<button onclick="termsConditions()">Click here to write file</button>
+			<h1 style="text-align: center;">Terms and conditions</h1>
+				<textarea rows="10" cols="70" style="margin-left: 200px" id="terms"></textarea><br>
+				<button onclick="termsConditions()" style="margin-left: 540px">Click here to write file</button>
 		</div>
 	</div> 
 	<?php include 'footer.php';?>     
