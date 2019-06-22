@@ -9,54 +9,42 @@
     <div class="container_wrapper" style="width: 100%;height: 515px">
     <?php include 'sidebar.php'; ?>
         <div class="content" style="width:70%;float:right;height:515px;background-color: #BFF908">
-            <form class="col-10 offset-0 mt-5">
+            <form class="col-12 offset-0 mt-5">
 	            <div class="form-group row">
-		            <label for="enterFoodName" class="col-2">Name of  Sub-Category</label>
-		            <div class="col-10">
+		            <label for="enterFoodName" class="col-3">Name of  Sub-Category</label>
+		            <div class="col-8" style="padding-left: 0px">
 		                <input type="text" class="form-control form-control-sm" id="subCat_name" placeholder="Enter sub-category">
-		                <script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
-		                <script type="text/javascript" src="admin.js"></script>
 		            </div>
 	            </div> 
 	            <div class="form-group row">
-		            <label for="enterFoodName" class="col-2">Name of Category</label>
-		            <div class="col-10">
+		            <label for="enterFoodName" class="col-3">Name of Category</label>
+		            <div class="col-8" style="padding-left: 0px">
 				    	<select class="form-control form-control-sm" id="category">
-				    		<option value="food">Food</option>
-				    		<option value="dessert">Dessert</option>
-				    		<option value="bar">Bar</option>
-				    		<option value="drink">Drink</option>
 				    	</select>
 				  	</div>
 	            </div> 
 	            <div class="form-group row">
-		            <label for="description" class="col-2">Description</label>
-		            <div class="col-10">
+		            <label for="description" class="col-3">Description</label>
+		            <div class="col-8" style="padding-left: 0px">
 		                <input type="text" class="form-control form-control-sm" id="desc" placeholder="Description">
-		                <script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
-		                <script type="text/javascript" src="admin.js"></script>
 		            </div>
 	            </div>
 	            <div class="form-group row">
-		            <label for="imageFile" class="col-2">Image</label>
-		            <div class="col-10">
+		            <label for="imageFile" class="col-3">Image</label>
+		            <div class="col-8" style="padding-left: 0px">
 		                <progress value="0" max="100" id="uploader">0%</progress>
 		                <input type="file" class="form-control form-control-sm" id="fileButton" placeholder="Description">
-		                <script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
-		                <script type="text/javascript" src="file.js"></script>
 		            </div>
 	            </div>
 	            <div class="form-group row">
-		            <label for="keywordField" class="col-2">Keywords</label>
-		            <div class="col-10">
+		            <label for="keywordField" class="col-3">Keywords</label>
+		            <div class="col-8" style="padding-left: 0px">
 		                <input type="text" class="form-control form-control-sm" id="kwrd" placeholder="Keyword">
-		                <script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
-		                <script type="text/javascript" src="admin.js"></script>
 		            </div>
 	            </div>
 	            <div class="form-group row">
-		            <label class="col-2"></label>
-		            <div class="col-8">
+		            <label class="col-3"></label>
+		            <div class="col-8"style="padding-left: 0px">
 		            <button type="submit" class="btn btn-primary" onclick="subcat()" >Submit</button>
 		            </div>
 	          	</div>
@@ -64,5 +52,18 @@
       	</div>
     </div> 
 	<?php include 'footer.php';?>  
+	<script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script type="text/javascript" src="admin.js"></script>
+	<script type="text/javascript">
+		var categoryElement = document.getElementById('category');
+		var categoryRef = firebase.database().ref('category');
+		categoryRef.on('value', function(categoryData) {
+		    categoryData.forEach(function(categoryDataChild) {
+		      var category = categoryDataChild.val();
+		      categoryElement.innerHTML = categoryElement.innerHTML +
+                '<option value="' + category['Category Name'] + '">' + category['Category Name'] + '</option>';
+		    });
+		});
+	</script>
 </body>
 </html>
