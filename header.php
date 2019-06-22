@@ -8,8 +8,11 @@
 	<title></title>
 </head>
 <body>
-	<div class="header_wrapper" style="height: 100px;background-color: #008B8B;padding: 0">
-		<h1 style="font-family: times new roman;font-size: 72px;padding: 5px;text-align: center;">Admin Dashboard</h1>
-	</div>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 100px">
+		<a class="navbar-brand" href="home.php" style="font-size: 48px;font-family: times new roman">Admin Dashboard</a>
+		<ul class="navbar-nav ml-auto">
+		  <button class="nav-item mr-5 mt-5" onclick="logout()">Logout</button>
+		</ul>
+	</nav>
 </body>
 </html>
