@@ -13,7 +13,37 @@
     <div class="container_wrapper" style="width: 100%;height: 515px">
 	<?php include 'sidebar.php'; ?>
 	    <div class="content" style="width:70%;float:right;height:515px;background-color: #BFF908">
-	          
+	        <table class="table table-dark">
+				<thead>
+				<tr>
+				  <th scope="col">S.N</th>
+				  <th scope="col">Food Name</th>
+				  <th scope="col">Quantity of sells</th>
+				  <th scope="col">Rate per item</th>
+				  <th scope="col">Total Price</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				  <th scope="row">1</th>
+				  <td>Mark</td>
+				  <td>Otto</td>
+				  <td>@mdo</td>
+				</tr>
+				<tr>
+				  <th scope="row">2</th>
+				  <td>Jacob</td>
+				  <td>Thornton</td>
+				  <td>@fat</td>
+				</tr>
+				<tr>
+				  <th scope="row">3</th>
+				  <td>Larry</td>
+				  <td>the Bird</td>
+				  <td>@twitter</td>
+				</tr>
+				</tbody>
+			</table>  
 	    </div>
     </div> 
     <?php include 'footer.php';?>     
