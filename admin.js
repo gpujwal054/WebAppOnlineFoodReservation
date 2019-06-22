@@ -14,14 +14,10 @@
 	var items_id = document.getElementById("item");
 	var tables = firebase.database().ref("tables");
 	var tables_id = document.getElementById("tabs");
-	var admin = firebase.database().ref("admins");
-	var admin_id = document.getElementById("admin_signUp");
 	var category = firebase.database().ref("category");
 	var category_id = document.getElementById("cats");
 	var sub_cat = firebase.database().ref("sub-category");
 	var subcat_id = document.getElementById("subcat");
-	var adminSignUp = firebase.database().ref("adminSignUp");
-	var adminSignUp_id = document.getElementById("btnSignUp");
 	var text = firebase.database().ref("textArea");
 	var text_id = document.getElementById("termsConditions");
 	var img;
@@ -50,6 +46,7 @@ function item(){
 	var items1 = firebase.database().ref("item").child(document.getElementById("food_name").value);
 	items1.child("Food Name").set(document.getElementById("food_name").value);
 	items1.child("Category").set(document.getElementById("category").value);
+	items1.child("Sub-category").set(document.getElementById("sub-category").value);
 	items1.child("Price").set(document.getElementById("price").value);
 	items1.child("Description").set(document.getElementById("desc").value);
 	items1.child("Image").set(img);
@@ -65,15 +62,15 @@ function cats(){
 	var category1 = firebase.database().ref("category").child(document.getElementById("cat_name").value);
 	category1.child("Category Name").set(document.getElementById("cat_name").value);
 	category1.child("Description").set(document.getElementById("desc").value);
-	category1.child("Image").set(document.getElementById("fileButton").value);
+	category1.child("Image").set(img);
 	category1.child("Keywords").set(document.getElementById("kwrd").value);
 }
 function subcat(){
 	var sub_cat1 = firebase.database().ref("sub-category").child(document.getElementById("subCat_name").value);
 	sub_cat1.child("Sub-category name").set(document.getElementById("subCat_name").value);
-	sub_cat1.child("Category Name").set(document.getElementById("cat_name").value);
+	sub_cat1.child("Category Name").set(document.getElementById("category").value);
 	sub_cat1.child("Description").set(document.getElementById("desc").value);
-	sub_cat1.child("Image").set(document.getElementById("fileButton").value);
+	sub_cat1.child("Image").set(img);
 	sub_cat1.child("Keywords").set(document.getElementById("kwrd").value);
 }
 
@@ -84,14 +81,12 @@ function termsConditions(){
 function login(){
 	var email = document.getElementById("userEmail").value;
 	var password = document.getElementById("userPassword").value;
-
 	firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-	// Handle Errors here.
-	var errorCode = error.code;
-	var errorMessage = error.message;
-	console.log(errorCode);
-	console.log(errorMessage);
-		// ...
+	  // Handle Errors here.
+	  var errorCode = error.code;
+	  var errorMessage = error.message;
+	  window.alert("Error")
+	  // ...
 	});
 }
 
@@ -121,5 +116,4 @@ function send_verification(){
 		window.alert("Error:" + error.message);
 	});
 }
-
 
