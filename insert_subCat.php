@@ -61,7 +61,7 @@
 		    categoryData.forEach(function(categoryDataChild) {
 		      var category = categoryDataChild.val();
 		      categoryElement.innerHTML = categoryElement.innerHTML +
-                '<option value="' + category['Category Name'] + '">' + category['Category Name'] + '</option>';
+                '<option value="' + category['category_name'] + '">' + category['category_name'] + '</option>';
 		    });
 		});
 	</script>
