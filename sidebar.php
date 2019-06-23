@@ -10,7 +10,7 @@
 	<div class="sidebar" style="width: 30%;background-color: #6B2B23;float: left;height: 515px">
 		<ul style="padding: 0;margin-top: 5px">
 			<div class="col-10">
-				<li style="display: block"><a href="insert_product.php" style="font-family: times new roman;font-size: 24px;color: white">Insert Product</a></li>
+				<li style="display: block"><a href="insert_menu.php" style="font-family: times new roman;font-size: 24px;color: white">Insert Menu Item</a></li>
 			</div>
 			<div class="col-10">
 				<li style="display: block;"><a href="insert_category.php" style="font-family: times new roman;font-size: 24px;color: white">Insert Category</a></li>
@@ -22,19 +22,19 @@
 				<li style="display: block;"><a href="insert_table.php" style="font-family: times new roman;font-size: 24px;color: white">Insert Table</a></li>
 			</div>
 			<div class="col-10">
-				<li style="display: block;"><a href="view_foodOrder.php" style="font-family: times new roman;font-size: 24px;color: white">View Food Order</a></li>
+				<li style="display: block;"><a href="view_menuOrder.php" style="font-family: times new roman;font-size: 24px;color: white">View Menu Order</a></li>
 			</div>
 			<div class="col-10">
 				<li style="display: block;"><a href="view_tableOrder.php" style="font-family: times new roman;font-size: 24px;color: white">View Table Order</a></li>
 			</div>
 			<div class="col-10">
-				<li style="display: block;"><a href="view_onlineFoodOrder.php" style="font-family: times new roman;font-size: 24px;color: white">View Online Food Order</a></li>
+				<li style="display: block;"><a href="view_onlineMenuOrder.php" style="font-family: times new roman;font-size: 24px;color: white">View Online Menu Order</a></li>
 			</div>
 			<div class="col-10">
 				<li style="display: block;"><a href="user_accountManagement.php" style="font-family: times new roman;font-size: 24px;color: white">User Account Management</a></li>
 			</div>
 			<div class="col-10">
-				<li style="display: block;"><a href="view_items.php" style="font-family: times new roman;font-size: 24px;color: white">View Product Items</a></li>
+				<li style="display: block;"><a href="view_items.php" style="font-family: times new roman;font-size: 24px;color: white">View Menu Items</a></li>
 			</div>
 			<div class="col-10">
 				<li style="display: block;"><a href="daily_incomeStatistics.php" style="font-family: times new roman;font-size: 24px;color: white">Daily Income Statistics</a></li>
