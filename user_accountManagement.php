@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>Online Food Reservation System</title>
 </head>
 <body>
@@ -16,6 +17,7 @@
 			<table class="table table-dark" id="ex-table">
 				<thead>
 				<tr>
+					<th scope="col">S.N</th>
 					<th scope="col">Name</th>
 					<th scope="col">Email</th>
 					<th scope="col">Address</th>
@@ -42,6 +44,7 @@
 		userRef.on('value', function(userData) {
 			if (userData.exists()) {
 				var content='';
+				var i=1;
 				userData.forEach(function(userDataChild) {
 					var name = userDataChild.val().name;
 					var email = userDataChild.val().email;
@@ -49,11 +52,14 @@
 					var contact = userDataChild.val().contact;
 
 					content += '<tr>';
+					content += '<td>' + i + '</td>';
 					content += '<td>' + name + '</td>';
 					content += '<td>' + email + '</td>';
 					content += '<td>' + address + '</td>';
 					content += '<td>' + contact + '</td>';
+					content += '<td>' + '<i class="fa fa-trash-o"></i>' + '</td>'
 					content += '</tr>';
+					i++;
 				});
 				$('#ex-table').append(content);
 			}
