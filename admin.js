@@ -44,34 +44,34 @@
 	});
 function item(){
 	var items1 = firebase.database().ref("item").child(document.getElementById("food_name").value);
-	items1.child("Food Name").set(document.getElementById("food_name").value);
-	items1.child("Category").set(document.getElementById("category").value);
-	items1.child("Sub-category").set(document.getElementById("sub-category").value);
-	items1.child("Price").set(document.getElementById("price").value);
-	items1.child("Description").set(document.getElementById("desc").value);
-	items1.child("Image").set(img);
-	items1.child("Keyword").set(document.getElementById("kwrd").value);
+	items1.child("item_name").set(document.getElementById("food_name").value);
+	items1.child("category").set(document.getElementById("category").value);
+	items1.child("sub_category").set(document.getElementById("sub-category").value);
+	items1.child("price").set(document.getElementById("price").value);
+	items1.child("description").set(document.getElementById("desc").value);
+	items1.child("image").set(img);
+	items1.child("keyword").set(document.getElementById("kwrd").value);
 }
 function tabs(){
 	var tables1 = firebase.database().ref("tables").child(document.getElementById("tab_name").value);
-	tables1.child("Table Name").set(document.getElementById("tab_name").value);
-	tables1.child("Number of chairs").set(document.getElementById("nums_chair").value);
-	tables1.child("Table Location").set(document.getElementById("tab_location").value);
+	tables1.child("table_name").set(document.getElementById("tab_name").value);
+	tables1.child("number_of_chairs").set(document.getElementById("nums_chair").value);
+	tables1.child("table_location").set(document.getElementById("tab_location").value);
 }
 function cats(){
 	var category1 = firebase.database().ref("category").child(document.getElementById("cat_name").value);
-	category1.child("Category Name").set(document.getElementById("cat_name").value);
-	category1.child("Description").set(document.getElementById("desc").value);
-	category1.child("Image").set(img);
-	category1.child("Keywords").set(document.getElementById("kwrd").value);
+	category1.child("category_name").set(document.getElementById("cat_name").value);
+	category1.child("description").set(document.getElementById("desc").value);
+	category1.child("image").set(img);
+	category1.child("keywords").set(document.getElementById("kwrd").value);
 }
 function subcat(){
 	var sub_cat1 = firebase.database().ref("sub-category").child(document.getElementById("subCat_name").value);
-	sub_cat1.child("Sub-category name").set(document.getElementById("subCat_name").value);
-	sub_cat1.child("Category Name").set(document.getElementById("category").value);
-	sub_cat1.child("Description").set(document.getElementById("desc").value);
-	sub_cat1.child("Image").set(img);
-	sub_cat1.child("Keywords").set(document.getElementById("kwrd").value);
+	sub_cat1.child("sub_category_name").set(document.getElementById("subCat_name").value);
+	sub_cat1.child("category_name").set(document.getElementById("category").value);
+	sub_cat1.child("description").set(document.getElementById("desc").value);
+	sub_cat1.child("image").set(img);
+	sub_cat1.child("keywords").set(document.getElementById("kwrd").value);
 }
 
 function termsConditions(){
@@ -97,13 +97,16 @@ function btnSignUp(){
 // Handle Errors here.
 	var errorCode = error.code;
 	var errorMessage = error.message;
-	console.log(errorCode);
-	console.log(errorMessage);
+	window.alert("User sign up successful");
 });
 }
 
 function logout(){
-	firebase.auth().signOut();
+	firebase.auth().signOut().then(function(){
+		window.alert("Sign out successful");
+	}).catch(function(error){
+		window.alert("Sign out error");
+	});
 }
 
 function send_verification(){
