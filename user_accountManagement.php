@@ -14,6 +14,14 @@
 	<div class="container_wrapper" style="width: 100%;height: 515px">	
 		<?php include 'sidebar.php'; ?>
 		<div class="content" style="width:70%;float:right;height:515px;background-color: #BFF908">
+			<div class="form-group">
+				<select name="state" id="maxRows">
+					<option value="2000">Show All</option>
+					<option value="5">5</option>
+					<option value="10">10</option>
+					<option value="15">15</option>
+				</select>
+			</div>
 			<table class="table table-dark" id="ex-table">
 				<thead>
 				<tr>
@@ -28,6 +36,11 @@
 				<tbody>
 				</tbody>
 			</table>
+			<div class="pagination-container">
+				<nav>
+					<ul class="pagination"></ul>
+				</nav>
+			</div>
 		</div>
 	</div> 
 	<?php include 'footer.php';?>     
@@ -64,6 +77,53 @@
 				$('#ex-table').append(content);
 			}
 		});
+	</script>
+	<script type="text/javascript">
+		var table = '#ex-table'
+		$('#maxRows').on('change',function(){
+			$('.pagination').html()
+			var trnum =0
+			var maxRows = parseInt($(this).val())
+			var totalRows = $(table+'tbody tr').length
+			$(table+'tr:gt(0)').each(function(){
+				trnum++
+				if (trnum > maxRows) {
+					$(this).hide()
+				} 
+				if (trnum <= maxRows) {
+					$(this).show()
+				}
+			})
+			if (totalRows > maxRows) {
+				var pagenum = Math.ceil(totalRows/maxRows)
+				for(var i=1;i<=pagenum;){
+					$('.pagination').append('<li data-page="'+i+'">\<span>'+ i++ +'<span class="sr-only">(current)/</span></span>\</li>').show()
+				}
+			}
+			$('.pagination li:first-child').addClass('active')
+			$('.pagination li').on('click',function(){
+				var pagenum = $(this).attr('data-page')
+				var trIndex = 0;
+				$('.pagination li').removeClass('active')
+				$(table+' tr:gt(0)').each(function(){
+					trIndex++
+					if (trIndex > (maxRows+pagenum) || trIndex <=((maxRows+pagenum)-maxRows)) {
+						$(this).hide()
+					} else{
+						$(this).show()
+					}
+				})
+			})		
+		})
+		$(function(){
+			$('table tr:eq(0)').prepend('<th>S.N</th>')
+			var id =0;
+			$('table tr:gt(0)').each(function(){
+				id++
+				$(this).prepend('<td>' +S.N+ '</td>')
+			})
+
+		})
 	</script>
 </body>
 </html>
